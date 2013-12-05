@@ -1,0 +1,8 @@
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\obj\x86\Debug\BouncingBall.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\bin\x86\Debug\BouncingBall.exe
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\bin\x86\Debug\BouncingBall.pdb
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\obj\x86\Debug\BouncingBall.exe
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\obj\x86\Debug\BouncingBall.pdb
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\bin\x86\Debug\Content\ball.xnb
+F:\Spelprogrammering\Labb1\BouncingBall\BouncingBall\bin\x86\Debug\Content\border.xnb
