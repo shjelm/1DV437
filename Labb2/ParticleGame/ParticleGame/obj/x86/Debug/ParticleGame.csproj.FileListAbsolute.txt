@@ -1,0 +1,7 @@
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\obj\x86\Debug\ParticleGame.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\bin\x86\Debug\ParticleGame.exe
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\bin\x86\Debug\ParticleGame.pdb
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\obj\x86\Debug\ParticleGame.exe
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\obj\x86\Debug\ParticleGame.pdb
+F:\Spelprogrammering\Labb2\ParticleGame\ParticleGame\bin\x86\Debug\Content\spark.xnb
