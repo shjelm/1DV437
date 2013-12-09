@@ -8,13 +8,14 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using ParticleGame.View;
 
 namespace ParticleGame
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class MasterController : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -22,7 +23,7 @@ namespace ParticleGame
         View.GameView view;
         View.Camera cam;
 
-        public Game1()
+        public MasterController()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -75,6 +76,11 @@ namespace ParticleGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            //if (view.PlayerWantsToRestart())
+            //{
+            //    view.Restart(gameTime.ElapsedGameTime.Seconds);
+            //}
+
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();

@@ -1,0 +1,6 @@
+F:\Spelprogrammering\BallGame\BallGame\bin\x86\Debug\BallGame.exe
+F:\Spelprogrammering\BallGame\BallGame\bin\x86\Debug\BallGame.pdb
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame2.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame.exe
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame.pdb

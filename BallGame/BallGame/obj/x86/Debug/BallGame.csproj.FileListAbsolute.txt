@@ -1,0 +1,12 @@
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\bin\x86\Debug\BallGame.exe
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\bin\x86\Debug\BallGame.pdb
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\obj\x86\Debug\BallGame.exe
+c:\users\sofia\documents\visual studio 2010\Projects\BallGame\BallGame\obj\x86\Debug\BallGame.pdb
+F:\Spelprogrammering\BallGame\BallGame\bin\x86\Debug\BallGame.exe
+F:\Spelprogrammering\BallGame\BallGame\bin\x86\Debug\BallGame.pdb
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame.exe
+F:\Spelprogrammering\BallGame\BallGame\obj\x86\Debug\BallGame.pdb

@@ -16,10 +16,17 @@ namespace ParticleGame.View
         private Vector2 acceleration;
         private float timeLivedSeconds;
         private float maxLifeTime;
+        private Vector2 radius = new Vector2(0.05f,0.05f);
+        private float life = 0;
 
         public SplitterParticle(int seed, Vector2 startPosition)
         {
-            //@TODO: startposition ska vara viewcoord
+            Restart(seed, startPosition);
+            life = 0;
+        }
+
+        private void Restart(int seed, Vector2 startPosition)
+        {
             this.seed = seed;
             this.startPosition = startPosition;
             this.position = new Vector2(startPosition.X, startPosition.Y);
@@ -30,7 +37,8 @@ namespace ParticleGame.View
             velocity = new Vector2(randomDirection.X, randomDirection.Y);
 
             timeLivedSeconds = 0.0f;
-            maxLifeTime = 2;
+            maxLifeTime = 2.0f;
+            life = maxLifeTime;
 
             float min = 0.01f;
             float max = 1.0f;
@@ -42,6 +50,11 @@ namespace ParticleGame.View
 
         internal void Update(float elapsedTimeSeconds)
         {
+            life -= elapsedTimeSeconds;
+            if (life < 0.0f)
+            {
+                Restart(seed, startPosition);
+            }
             position = position + velocity * elapsedTimeSeconds;
             velocity = velocity + acceleration * elapsedTimeSeconds;
 
@@ -50,9 +63,11 @@ namespace ParticleGame.View
 
         internal void Draw(SpriteBatch spriteBatch, Camera camera, Texture2D texture)
         {
-            //sista två int storlekt på particle
             Vector2 viewPosition = camera.GetVisualPositions(position);
-            Rectangle rect = new Rectangle((int)viewPosition.X, (int)viewPosition.Y, 15, 15);
+
+            Vector2 visualRadius = camera.GetVisualPositions(radius);
+
+            Rectangle rect = new Rectangle((int)viewPosition.X, (int)viewPosition.Y, (int)visualRadius.X, (int)visualRadius.Y);
 
             float t = timeLivedSeconds/maxLifeTime;
             if (t > 1.0)

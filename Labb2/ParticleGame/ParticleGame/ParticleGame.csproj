@@ -113,7 +113,7 @@
     <Compile Include="View\SplitterParticle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Controller\Game1.cs" />
+    <Compile Include="Controller\MasterController.cs" />
     <Compile Include="View\SplitterSystem.cs" />
   </ItemGroup>
   <ItemGroup>

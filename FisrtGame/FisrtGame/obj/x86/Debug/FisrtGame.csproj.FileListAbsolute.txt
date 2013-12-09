@@ -1,0 +1,6 @@
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\bin\x86\Debug\FisrtGame.exe
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\bin\x86\Debug\FisrtGame.pdb
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\obj\x86\Debug\FisrtGame.exe
+c:\users\sofia\documents\visual studio 2010\Projects\FisrtGame\FisrtGame\obj\x86\Debug\FisrtGame.pdb

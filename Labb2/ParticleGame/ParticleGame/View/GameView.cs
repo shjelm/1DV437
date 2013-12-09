@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace ParticleGame.View
 {
@@ -13,14 +14,14 @@ namespace ParticleGame.View
         private SpriteBatch spriteBatch;
         private Camera cam;
         private Texture2D texture;
+        Vector2 modelStartPosition = new Vector2(0.5f, 0.5f);
 
         public GameView(SpriteBatch spriteBatch, Texture2D texture, Camera camera)
         {
             this.spriteBatch = spriteBatch;
             this.texture = texture;
             this.cam = camera;
-            Vector2 systemStartPosition = new Vector2(0.5f, 0.5f);
-            splitterSystem = new SplitterSystem(systemStartPosition);
+            splitterSystem = new SplitterSystem(modelStartPosition);
         }
 
         internal void Draw(float elapsedTimeSeconds)
@@ -28,9 +29,18 @@ namespace ParticleGame.View
             splitterSystem.Update(elapsedTimeSeconds);
 
             spriteBatch.Begin();
-            splitterSystem.Draw(spriteBatch, cam, texture);
-           
+            splitterSystem.Draw(spriteBatch, cam, texture);           
             spriteBatch.End();
         }
+
+        //internal void Restart(float elapsedTimeSeconds)
+        //{
+        //    Draw(elapsedTimeSeconds);
+        //}
+
+        //internal bool PlayerWantsToRestart()
+        //{
+        //    return Keyboard.GetState().IsKeyDown(Keys.Space); 
+        //}
     }
 }

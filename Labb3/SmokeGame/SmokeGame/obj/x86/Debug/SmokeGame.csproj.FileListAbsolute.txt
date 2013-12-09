@@ -1,0 +1,6 @@
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.exe
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.pdb
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.exe
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.pdb
+F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb
