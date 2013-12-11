@@ -1,0 +1,11 @@
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\obj\x86\Debug\FireAndExplosionGame.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\FireAndExplosionGame.exe
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\FireAndExplosionGame.pdb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\obj\x86\Debug\FireAndExplosionGame.exe
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\obj\x86\Debug\FireAndExplosionGame.pdb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\Content\spark.xnb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\Content\explosion.xnb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\Content\particlesmoke.xnb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\Content\dot.xnb
+F:\Spelprogrammering\Labb1\FireAndExplosionGame\FireAndExplosionGame\bin\x86\Debug\Content\Shockwave.xnb

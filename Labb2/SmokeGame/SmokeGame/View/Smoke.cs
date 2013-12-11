@@ -19,6 +19,14 @@ namespace SmokeGame.View
         private Vector2 smokeSize;
         private float life = 0;
         private float visibility;
+        private float delaySeconds;
+        public float delay;
+        public static float MAX_DELAY = 5.0f;
+        private float particleSpeed;
+        private float rotation;
+        private float origin = 6.0f;
+        private float size;
+        private float lifePercent;
 
         public Smoke(int seed, Vector2 startPosition)
         {
@@ -33,22 +41,29 @@ namespace SmokeGame.View
             this.position = new Vector2(startPosition.X, startPosition.Y);
             Random rand = new Random(seed);
 
-            //Vector2 randomDirection = new Vector2((float)rand.Next(-1, 1), (float)rand.Next(-1, 1));
-            //randomDirection.Normalize();
-            //velocity = new Vector2(randomDirection.X, randomDirection.Y);
+            delay = (float)rand.NextDouble() * MAX_DELAY;
 
-            velocity = new Vector2(0.0f, 0.1f);
+            Vector2 randomDirection = new Vector2((float)rand.Next(-5, 5), (float)rand.Next(-4,1));
+            randomDirection.Normalize();
+            velocity = new Vector2(randomDirection.X, randomDirection.Y);
+
+            float maxRotation = 10.0f;
+            rotation = (float)rand.NextDouble() * maxRotation;
+
+            //velocity = new Vector2(0.0f, 0.5f);
 
             timeLivedSeconds = 0.0f;
-            maxLifeTime = 5.0f;
+            maxLifeTime = 3.0f;
             life = maxLifeTime;
 
             float min = 0.01f;
-            float max = 0.5f;
-            float particleSpeed = min + ((float)(rand.NextDouble()) * max - min);
+            float max = 0.3f;
+            particleSpeed = particleSpeed * min + ((float)(rand.NextDouble()) * max - min);
 
             velocity *= particleSpeed;
-            acceleration = new Vector2(0.0f, -0.3f);
+            acceleration = new Vector2(0.0f, -0.5f);
+
+            delaySeconds = (float)(rand.NextDouble()) * 0.1f;
         }
 
         internal void Update(float elapsedTimeSeconds)
@@ -57,11 +72,16 @@ namespace SmokeGame.View
 
             if (life < 0.0f)
             {
+                if (delay > 0)
+                {
+                    delay -= elapsedTimeSeconds;
+                    return;
+                }
                 Restart(seed, startPosition);
             }
 
-            position = position + velocity * elapsedTimeSeconds;
             velocity = velocity + acceleration * elapsedTimeSeconds;
+            position = position + velocity * elapsedTimeSeconds;
 
             timeLivedSeconds += elapsedTimeSeconds;
 
@@ -72,20 +92,22 @@ namespace SmokeGame.View
                 t = 1.0f;
             }
 
-            float endValue = 0.0f;
+            float endValue = 0.01f;
             float startValue = 1.0f;
             visibility = t * endValue +(1-t) * startValue;
 
-            float minSize = 0.01f;
-            float maxSize = 1.0f;
-            float size = maxSize * t + minSize;
+            float minSize = 1.0f;
+            float maxSize = 10.0f;
+
+            timeLivedSeconds += elapsedTimeSeconds;
+            lifePercent = timeLivedSeconds / maxLifeTime;
+            size = minSize + lifePercent * maxSize;
 
             smokeSize = new Vector2(size, size);
         }
 
         internal void Draw(SpriteBatch spriteBatch, Camera camera, Texture2D texture)
         {
-
             Vector2 viewPosition = camera.GetVisualPositions(position);
 
             Vector2 visualRadius = camera.GetVisualPositions(smokeSize);
@@ -94,8 +116,8 @@ namespace SmokeGame.View
 
             Color color = new Color(visibility, visibility, visibility, visibility);
 
-            spriteBatch.Draw(texture, rect, color);
-            //spriteBatch.Draw(texture,viewPosition,null,color,8.2f,new Vector2(8, 8),visualRadius.X,SpriteEffects.None,0);
+            //spriteBatch.Draw(texture, rect, color);
+            spriteBatch.Draw(texture, viewPosition, null, color, rotation, new Vector2(origin, origin), size, SpriteEffects.None, 0);
         }
     }
 }

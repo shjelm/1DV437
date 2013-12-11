@@ -10,7 +10,7 @@ namespace SmokeGame.View
     class SmokeSystem
     {
         private Smoke[] smokeClouds;
-        private const int MAX_SMOKE = 5;
+        private const int MAX_SMOKE = 30;
 
         public SmokeSystem(Vector2 modelStartPosition)
         {

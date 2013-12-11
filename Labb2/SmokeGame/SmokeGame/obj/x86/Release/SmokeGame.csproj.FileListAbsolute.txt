@@ -1,0 +1,7 @@
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Release\Content\particlesmoke.xnb
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Release\SmokeGame.exe
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Release\SmokeGame.pdb
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Release\ResolveAssemblyReference.cache
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Release\SmokeGame.exe
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Release\SmokeGame.pdb

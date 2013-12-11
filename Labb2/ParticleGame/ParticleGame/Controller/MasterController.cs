@@ -76,11 +76,6 @@ namespace ParticleGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            //if (view.PlayerWantsToRestart())
-            //{
-            //    view.Restart(gameTime.ElapsedGameTime.Seconds);
-            //}
-
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Q))
                 this.Exit();

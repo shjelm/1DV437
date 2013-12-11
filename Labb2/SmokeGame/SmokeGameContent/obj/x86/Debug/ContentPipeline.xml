@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb</Output>
+      <Output>F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb</Output>
       <Time>2013-12-09T15:52:30+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -16,10 +16,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>F:\Spelprogrammering\Labb1\SmokeGame\SmokeGameContent\</RootDirectory>
-      <LoggerRootDirectory>F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\</LoggerRootDirectory>
-      <IntermediateDirectory>F:\Spelprogrammering\Labb1\SmokeGame\SmokeGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>F:\Spelprogrammering\Labb2\SmokeGame\SmokeGameContent\</RootDirectory>
+      <LoggerRootDirectory>F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\</LoggerRootDirectory>
+      <IntermediateDirectory>F:\Spelprogrammering\Labb2\SmokeGame\SmokeGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

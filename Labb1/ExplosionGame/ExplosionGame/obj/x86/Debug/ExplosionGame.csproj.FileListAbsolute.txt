@@ -1,0 +1,7 @@
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\bin\x86\Debug\Content\explosion.xnb
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\bin\x86\Debug\ExplosionGame.exe
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\bin\x86\Debug\ExplosionGame.pdb
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\obj\x86\Debug\ExplosionGame.exe
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\obj\x86\Debug\ExplosionGame.pdb
+F:\Spelprogrammering\Labb1\ExplosionGame\ExplosionGame\obj\x86\Debug\ExplosionGame.csprojResolveAssemblyReference.cache

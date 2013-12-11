@@ -1,1 +1,3 @@
 F:\Spelprogrammering\Labb1\SmokeGame\SmokeGameContent\obj\x86\Debug\SmokeGameContent.contentprojResolveAssemblyReference.cache
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGameContent\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGameContent\obj\x86\Debug\SmokeGameContent.contentprojResolveAssemblyReference.cache

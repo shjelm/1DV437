@@ -32,15 +32,5 @@ namespace ParticleGame.View
             splitterSystem.Draw(spriteBatch, cam, texture);           
             spriteBatch.End();
         }
-
-        //internal void Restart(float elapsedTimeSeconds)
-        //{
-        //    Draw(elapsedTimeSeconds);
-        //}
-
-        //internal bool PlayerWantsToRestart()
-        //{
-        //    return Keyboard.GetState().IsKeyDown(Keys.Space); 
-        //}
     }
 }

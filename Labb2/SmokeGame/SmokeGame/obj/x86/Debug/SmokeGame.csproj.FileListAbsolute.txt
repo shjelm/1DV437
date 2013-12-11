@@ -4,3 +4,17 @@ F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\Microsoft.Xna.Frame
 F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.exe
 F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.pdb
 F:\Spelprogrammering\Labb1\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.exe
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.pdb
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.exe
+G:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.pdb
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\Content\particlesmoke.xnb
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.exe
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\bin\x86\Debug\SmokeGame.pdb
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.csprojResolveAssemblyReference.cache
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.exe
+F:\Spelprogrammering\Labb2\SmokeGame\SmokeGame\obj\x86\Debug\SmokeGame.pdb
