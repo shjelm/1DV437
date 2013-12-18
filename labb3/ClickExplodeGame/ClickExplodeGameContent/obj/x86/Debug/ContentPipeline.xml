@@ -46,6 +46,15 @@
       <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\border.xnb</Output>
       <Time>2013-12-17T13:53:48+01:00</Time>
     </Item>
+    <Item>
+      <Source>sikte.png</Source>
+      <Name>sikte</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\sikte.xnb</Output>
+      <Time>2013-12-18T15:47:40+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

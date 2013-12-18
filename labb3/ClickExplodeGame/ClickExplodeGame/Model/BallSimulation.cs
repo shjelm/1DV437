@@ -8,50 +8,53 @@ namespace ClickExplodeGame
 {
     class BallSimulation
     {
-        public Ball ball;
-        private Vector2 velocity;
-        private Vector2 position;
+        public Ball[] balls;
+        public const int MAX_BALLS = 10;
+        public List<Ball> ballList;
 
-        public BallSimulation(Vector2 startPos)
+        public BallSimulation()
         {
-            for (int i = 0; i <= 10; i++)
-            {
-                ball = new Ball(i, startPos);
+            balls = new Ball[MAX_BALLS];
+            for(int i = 0; i < MAX_BALLS; i++){
+                balls[i] = new Ball(i);
             }
         }
 
-        internal void Update(Microsoft.Xna.Framework.GameTime gameTime)
+        internal void Update(Microsoft.Xna.Framework.GameTime gameTime, Vector2 mousePos, bool clicked)
         {
-            float elapsedTimeSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-            Random rand = new Random(10);
-            Vector2 randomDirection = new Vector2((float)rand.Next(-5, 5), (float)rand.Next(-4, 1));
-            randomDirection.Normalize();
-
-            velocity = new Vector2(randomDirection.X, randomDirection.Y);
-
-            position = position + velocity * elapsedTimeSeconds;
-            
-
-            ball.position.X += elapsedTimeSeconds * ball.speed.X;
-            ball.position.Y += elapsedTimeSeconds * ball.speed.Y;
-
-            if (ball.GetCenterPosition().X - ball.radius*0.5 > 1.0f)
+            for (int i = 0; i < MAX_BALLS; i++)
             {
-                ball.speed.X = -ball.speed.X;
-            }
-            if (ball.GetCenterPosition().Y - ball.radius * 0.5 > 1.0f)
-            {
-                ball.speed.Y = -ball.speed.Y;
-            }
+                Point ball = new Point((int)balls[i].logicalPosition.X, (int)balls[i].logicalPosition.Y);
+                
+                float elapsedTimeSeconds = (float)gameTime.ElapsedGameTime.TotalSeconds;                
 
-            if (ball.position.X - ball.radius * 2 <= 0)
-            {
-                ball.speed.X = -ball.speed.X;
-            }
-            if (ball.position.Y - ball.radius * 2 <= 0)    
-            {
-                ball.speed.Y = -ball.speed.Y;
+                balls[i].logicalPosition += balls[i].velocity * elapsedTimeSeconds;
+
+                if (balls[i].GetCenterPosition().X - balls[i].radius * 0.5 > 1.0f)
+                {
+                    balls[i].velocity.X = -balls[i].velocity.X;
+                }
+                if (balls[i].GetCenterPosition().Y - balls[i].radius * 0.5 > 1.0f)
+                {
+                    balls[i].velocity.Y = -balls[i].velocity.Y;
+                }
+
+                if (balls[i].logicalPosition.X - balls[i].radius * 2 <= 0)
+                {
+                    balls[i].velocity.X = -balls[i].velocity.X;
+                }
+                if (balls[i].logicalPosition.Y - balls[i].radius * 2 <= 0)
+                {
+                    balls[i].velocity.Y = -balls[i].velocity.Y;
+                }
+
+                if (clicked == true)
+                {
+                    if (Vector2.Distance(mousePos,balls[i].logicalPosition) < 0.15)
+                    {
+                        balls[i].velocity = new Vector2(0.0f, 0.0f);
+                    }
+                }
             }
 
         }

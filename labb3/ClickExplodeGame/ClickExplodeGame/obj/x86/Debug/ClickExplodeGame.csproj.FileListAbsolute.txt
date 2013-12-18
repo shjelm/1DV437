@@ -18,3 +18,4 @@ F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\obj\x86\Debug\Click
 F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\obj\x86\Debug\ClickExplodeGame.pdb
 F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\ball.xnb
 F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\border.xnb
+F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\sikte.xnb

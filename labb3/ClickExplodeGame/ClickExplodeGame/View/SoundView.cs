@@ -8,18 +8,18 @@ namespace ClickExplodeGame.View
 {
     class SoundView
     {        
-        private SoundSytem soundSystem;
         private SoundEffect soundEffect;
+        private FireSound sound;
 
         public SoundView(SoundEffect soundEffect)
         {
             this.soundEffect = soundEffect;
-            soundSystem = new SoundSytem(this.soundEffect);
+            sound = new FireSound();
         }
 
         internal void Play()
         {
-            soundSystem.PlaySound(soundEffect);
+            sound.PlaySound(soundEffect);
         }
     }
 }

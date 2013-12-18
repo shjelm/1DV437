@@ -25,10 +25,14 @@ namespace ClickExplodeGame
         private Texture2D smokeTexture;
         private Texture2D borderTexture;
         private Texture2D ballTexture;
+        private Texture2D aimTexture;
+        
+        private Vector2 mousePos;
+
+        private List<ExplosionView> exViews = new List<ExplosionView>();
         
         GameView view;
         BallView ballView;
-        ExplosionView exView;
        
         SoundView soundView;
         BallSimulation ballSim;
@@ -67,16 +71,13 @@ namespace ClickExplodeGame
             soundEffect = Content.Load<SoundEffect>("fire");
             ballTexture = Content.Load<Texture2D>("ball");
             borderTexture = Content.Load<Texture2D>("border");
+            aimTexture = Content.Load<Texture2D>("sikte");
 
-            this.ballSim = new BallSimulation(new Vector2(0.5f, 0.5f));
+            this.ballSim = new BallSimulation();
 
-            view = new GameView();
-            Vector2 mousePos = view.GetMousePos();
-
-            cam = new View.Camera(400, 400);
-            exView = new View.ExplosionView(spriteBatch, sparkTexture, smokeTexture, cam, cam.GetModelPositions(mousePos));
+            view = new GameView(spriteBatch);
+            cam = new View.Camera(graphics.PreferredBackBufferHeight, graphics.PreferredBackBufferWidth);
             soundView = new SoundView(soundEffect);
-
             ballView = new BallView(spriteBatch, ballTexture,cam);
         }
 
@@ -101,15 +102,15 @@ namespace ClickExplodeGame
                 this.Exit();
 
             // TODO: Add your update logic here
-            if (view.PlayerClicks())
+            if (view.PlayerClicks(cam))
             {
-                Vector2 mousePos = view.GetMousePos();
-                exView = new View.ExplosionView(spriteBatch,sparkTexture, smokeTexture, cam, cam.GetModelPositions(mousePos));
-                
+                mousePos = view.GetMousePos();
+                exViews.Add(new View.ExplosionView(spriteBatch,sparkTexture, smokeTexture, cam, cam.GetModelPositions(mousePos)));
                 soundView.Play();
             }
-            ballSim.Update(gameTime);
-            //ballView.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+            view.UpdateAim(mousePos);
+            ballSim.Update(gameTime, cam.GetModelPositions(mousePos), view.PlayerClicks(cam));
 
             base.Update(gameTime);
         }
@@ -124,9 +125,16 @@ namespace ClickExplodeGame
 
             // TODO: Add your drawing code here
             //ballView.DrawBorder(borderTexture);
-            exView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
+            if (exViews != null)
+            {
+                for (int i = 0; i < exViews.Count; i++)
+                {
+                    exViews[i].Draw((float)gameTime.ElapsedGameTime.TotalSeconds, exViews);
+                }
+            }
 
-            ballView.DrawBall(ballSim.ball,(float)gameTime.ElapsedGameTime.TotalSeconds);
+            view.DrawAim(aimTexture, mousePos);
+            ballView.DrawBall(ballSim.balls);
             base.Draw(gameTime);
         }
     }

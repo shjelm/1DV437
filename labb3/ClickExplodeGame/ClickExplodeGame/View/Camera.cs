@@ -15,9 +15,14 @@ namespace ClickExplodeGame.View
         public float gameBox;
         private int maxLogicalCoordinate = 1;
         public float ball;
+        public float windowHeight;
+        public float windowWidth;
 
         public Camera(float windowHeight, float windowWidth)
         {
+            this.windowHeight = windowHeight;
+            this.windowWidth = windowWidth;
+
             if (windowHeight > windowWidth)
             {
                 windowHeight = windowWidth;

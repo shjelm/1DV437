@@ -23,28 +23,30 @@ namespace ClickExplodeGame.View
         private Rectangle rectangle;
         private Camera camera;
 
-        private BallSystem ballSystem;
-
         public BallView(SpriteBatch spriteBatch, Texture2D texture, Camera camera)
         {
             this.spriteBatch = spriteBatch;
             this.texture = texture;
             this.camera = camera;
-            ballSystem = new BallSystem(startPos);
         }
 
-        internal void Update(float elapsedTimeSeconds)
+        internal void DrawBall(Ball[] balls)
         {
-            ballSystem.Update(elapsedTimeSeconds);
-        }
+            for (int i = 0; i < balls.Length; i++)
+            {
+                Vector2 screenPositions = camera.GetVisualPositions(balls[i].logicalPosition);
 
-        internal void DrawBall(Ball ball, float elapsedTimeSeconds)
-        {
-            this.Update(elapsedTimeSeconds);
+                int screenX = (int)screenPositions.X;
+                int screenY = (int)screenPositions.Y;
 
-            spriteBatch.Begin();
-            ballSystem.Draw(spriteBatch, camera, texture, ball);
-            spriteBatch.End();
+                int ballSize = (int)camera.ball;
+
+                this.rectangle = new Rectangle(screenX, screenY, ballSize, ballSize);
+
+                spriteBatch.Begin();
+                spriteBatch.Draw(texture, rectangle, Color.White);
+                spriteBatch.End();
+            }
         }
 
         internal void DrawBorder(Texture2D borderTexture)
