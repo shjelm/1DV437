@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\particlesmoke.xnb</Output>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\particlesmoke.xnb</Output>
       <Time>2013-12-12T14:17:48+01:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\spark.xnb</Output>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\spark.xnb</Output>
       <Time>2013-12-12T14:17:48+01:00</Time>
     </Item>
     <Item>
@@ -25,8 +25,26 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\fire.xnb</Output>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\fire.xnb</Output>
       <Time>2013-12-12T14:19:26+01:00</Time>
+    </Item>
+    <Item>
+      <Source>ball.png</Source>
+      <Name>ball</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\ball.xnb</Output>
+      <Time>2013-12-17T13:53:42+01:00</Time>
+    </Item>
+    <Item>
+      <Source>border.png</Source>
+      <Name>border</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\border.xnb</Output>
+      <Time>2013-12-17T13:53:48+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -34,10 +52,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGameContent\</RootDirectory>
-      <LoggerRootDirectory>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGame\</LoggerRootDirectory>
-      <IntermediateDirectory>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGameContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>F:\Spelprogrammering\Labb1\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGameContent\</RootDirectory>
+      <LoggerRootDirectory>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\</LoggerRootDirectory>
+      <IntermediateDirectory>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>F:\Spelprogrammering\Labb3\ClickExplodeGame\ClickExplodeGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

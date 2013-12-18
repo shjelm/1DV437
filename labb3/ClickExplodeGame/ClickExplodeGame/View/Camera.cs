@@ -10,22 +10,33 @@ namespace ClickExplodeGame.View
     {
         public float borderSize;
         private Vector2 visual;
+        private Vector2 logical;
         public Vector2 scale;
+        public float gameBox;
         private int maxLogicalCoordinate = 1;
+        public float ball;
 
         public Camera(float windowHeight, float windowWidth)
         {
             if (windowHeight > windowWidth)
             {
                 windowHeight = windowWidth;
+                gameBox = windowWidth;
             }
             else
             {
                 windowWidth = windowHeight;
+                gameBox = windowHeight;
             }
 
             float x = windowHeight * maxLogicalCoordinate;
             scale = new Vector2(x,x);
+
+            borderSize = windowHeight * 0.05f;
+
+            gameBox = gameBox - borderSize * 2;
+            ball = Ball.ball;
+            ball = ball * scale.X;
         }
 
         internal Vector2 GetVisualPositions(Vector2 logical)
@@ -36,9 +47,12 @@ namespace ClickExplodeGame.View
             return visual;
         }
 
-        internal void getCenterPosition()
+        internal Vector2 GetModelPositions(Vector2 visual)
         {
+            logical.X = (visual.X  + borderSize)/scale.X;
+            logical.Y = (visual.Y  + borderSize)/scale.Y;
 
+            return logical;
         }
     }
 }

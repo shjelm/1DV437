@@ -13,19 +13,24 @@ namespace ClickExplodeGame.View
         private SpriteBatch spriteBatch;
         private Camera cam;
         private Texture2D texture;
-        Vector2 modelStartPosition = new Vector2(0.5f, 0.8f);
+        Vector2 modelStartPosition = new Vector2(1.2f, 1.8f);
 
-        public SmokeGameView(SpriteBatch spriteBatch, Texture2D texture, Camera camera)
+        public SmokeGameView(SpriteBatch spriteBatch, Texture2D texture, Camera camera, Vector2 mousePos)
         {
             this.spriteBatch = spriteBatch;
             this.texture = texture;
             this.cam = camera;
-            smokeSystem = new SmokeSystem(modelStartPosition);
+            smokeSystem = new SmokeSystem(mousePos);
+        }
+
+        internal void Update(float elapsedTimeSeconds)
+        {
+            smokeSystem.Update(elapsedTimeSeconds);
         }
 
         internal void Draw(float elapsedTimeSeconds)
         {
-            smokeSystem.Update(elapsedTimeSeconds);
+            this.Update(elapsedTimeSeconds);
 
             spriteBatch.Begin();
             smokeSystem.Draw(spriteBatch, cam, texture);

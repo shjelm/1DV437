@@ -50,11 +50,11 @@ namespace ClickExplodeGame.View
 
         internal void Update(float elapsedTimeSeconds)
         {
-            life -= elapsedTimeSeconds;
-            if (life < 0.0f)
-            {
-                Restart(seed, startPosition);
-            }
+            //life -= elapsedTimeSeconds;
+            //if (life < 0.0f)
+            //{
+            //    Restart(seed, startPosition);
+            //}
             position = position + velocity * elapsedTimeSeconds;
             velocity = velocity + acceleration * elapsedTimeSeconds;
 

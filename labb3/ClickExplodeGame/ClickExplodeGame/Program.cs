@@ -10,7 +10,7 @@ namespace ClickExplodeGame
         /// </summary>
         static void Main(string[] args)
         {
-            using (GameController game = new GameController())
+            using (MasterController game = new MasterController())
             {
                 game.Run();
             }

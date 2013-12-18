@@ -15,7 +15,7 @@ namespace ClickExplodeGame
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class GameController : Microsoft.Xna.Framework.Game
+    public class MasterController : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -23,16 +23,21 @@ namespace ClickExplodeGame
         SoundEffect soundEffect;
         private Texture2D sparkTexture;
         private Texture2D smokeTexture;
+        private Texture2D borderTexture;
+        private Texture2D ballTexture;
+        
         GameView view;
-        SparkGameView sparkView;
-        SmokeGameView smokeView;
-        SparkGameView sparkView2;
+        BallView ballView;
+        ExplosionView exView;
+       
         SoundView soundView;
-        //SwGameView swView;
+        BallSimulation ballSim;
 
-        public GameController()
+        public MasterController()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = 500;
+            graphics.PreferredBackBufferWidth = 500;
             Content.RootDirectory = "Content";
         }
 
@@ -60,17 +65,19 @@ namespace ClickExplodeGame
             sparkTexture = Content.Load<Texture2D>("spark");
             smokeTexture = Content.Load<Texture2D>("particlesmoke");
             soundEffect = Content.Load<SoundEffect>("fire");
-            //swTexture = Content.Load<Texture2D>("shockwave");
+            ballTexture = Content.Load<Texture2D>("ball");
+            borderTexture = Content.Load<Texture2D>("border");
+
+            this.ballSim = new BallSimulation(new Vector2(0.5f, 0.5f));
+
+            view = new GameView();
+            Vector2 mousePos = view.GetMousePos();
 
             cam = new View.Camera(400, 400);
-
-            sparkView = new View.SparkGameView(spriteBatch, sparkTexture, cam);
-            smokeView = new View.SmokeGameView(spriteBatch, smokeTexture, cam);
-            view = new View.GameView();
+            exView = new View.ExplosionView(spriteBatch, sparkTexture, smokeTexture, cam, cam.GetModelPositions(mousePos));
             soundView = new SoundView(soundEffect);
-            //swView = new View.SwGameView(spriteBatch, swTexture, cam);
 
-            // TODO: use this.Content to load your game content here
+            ballView = new BallView(spriteBatch, ballTexture,cam);
         }
 
         /// <summary>
@@ -96,11 +103,13 @@ namespace ClickExplodeGame
             // TODO: Add your update logic here
             if (view.PlayerClicks())
             {
-                smokeView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
-                //sparkView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
-
+                Vector2 mousePos = view.GetMousePos();
+                exView = new View.ExplosionView(spriteBatch,sparkTexture, smokeTexture, cam, cam.GetModelPositions(mousePos));
+                
                 soundView.Play();
             }
+            ballSim.Update(gameTime);
+            //ballView.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);
         }
@@ -114,9 +123,10 @@ namespace ClickExplodeGame
             GraphicsDevice.Clear(new Color(38, 40, 42));
 
             // TODO: Add your drawing code here
-            smokeView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
-            sparkView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
-            //swView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
+            //ballView.DrawBorder(borderTexture);
+            exView.Draw((float)gameTime.ElapsedGameTime.TotalSeconds);
+
+            ballView.DrawBall(ballSim.ball,(float)gameTime.ElapsedGameTime.TotalSeconds);
             base.Draw(gameTime);
         }
     }

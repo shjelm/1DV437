@@ -34,7 +34,7 @@ namespace ClickExplodeGame.View
             life = 0;
         }
 
-        private void Restart(int seed, Vector2 startPosition)
+        public void Restart(int seed, Vector2 startPosition)
         {
             this.seed = seed;
             this.startPosition = startPosition;

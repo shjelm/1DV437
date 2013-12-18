@@ -12,13 +12,13 @@ namespace ClickExplodeGame.View
         private Smoke[] smokeClouds;
         private const int MAX_SMOKE = 25;
 
-        public SmokeSystem(Vector2 modelStartPosition)
+        public SmokeSystem(Vector2 mousePos)
         {
             smokeClouds = new Smoke[MAX_SMOKE];
 
             for (int i = 0; i < MAX_SMOKE; i++)
             {
-                smokeClouds[i] = new Smoke(i, modelStartPosition);
+                smokeClouds[i] = new Smoke(i, mousePos);
             }
         }
 
