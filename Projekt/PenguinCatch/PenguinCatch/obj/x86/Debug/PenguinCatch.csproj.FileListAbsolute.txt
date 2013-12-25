@@ -1,0 +1,7 @@
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\PenguinCatch.exe
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\PenguinCatch.pdb
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\obj\x86\Debug\PenguinCatch.exe
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\obj\x86\Debug\PenguinCatch.pdb
+G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\Tile.xnb
