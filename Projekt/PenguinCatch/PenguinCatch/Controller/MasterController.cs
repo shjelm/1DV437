@@ -93,17 +93,13 @@ namespace PenguinCatch
             {
                 model.Jump();
             }
-            else if (view.PlayerWantsToMoveLeft())
+            if (view.PlayerWantsToMoveLeft())
             {
                 model.MoveLeft();
             }
-            else if (view.PlayerWantsToMoveRight())
+            if (view.PlayerWantsToMoveRight())
             {
                 model.MoveRight();
-            }
-            else
-            {
-                model.StopPlayer();
             }
 
             model.Update((float)gameTime.ElapsedGameTime.TotalSeconds);

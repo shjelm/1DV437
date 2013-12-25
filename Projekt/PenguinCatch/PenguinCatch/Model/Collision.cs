@@ -9,22 +9,20 @@ namespace PenguinCatch.Model
     class Collision
     {
         private Vector2 position;
+        private float radius = 0.5f;
 
-        public Collision(Vector2 position)
+        public Collision(Vector2 position, float radius)
         {
             this.position = position;
+            this.radius = radius;
         }
 
-        internal Vector2 GetCollisionPosition()
+        internal bool Collide(Collision otherCollision)
         {
-            return position;
-        }
+            Vector2 line = position - otherCollision.position;
+            float distance = line.Length();
 
-        internal bool DidCollide(Vector2 otherPosition)
-        {
-            float distance = Vector2.Distance(position, otherPosition);
-
-            if (distance <= 0.05)
+            if (distance < radius*2 + otherCollision.radius*2)
             {
                 return true;
             }
