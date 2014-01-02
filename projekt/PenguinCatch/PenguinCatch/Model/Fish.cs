@@ -13,8 +13,6 @@ namespace PenguinCatch.Model
             Eaten       
         }
 
-        public FishState state;
-
         private Vector2 position;
 
         public Fish(Vector2 position) {

@@ -16,22 +16,25 @@ namespace PenguinCatch
         MasterController masterController = new MasterController();
         Texture2D instructionsTexture;
 
+        private SpriteBatch spriteBatch;
+
         List<string> buttonList = new List<string>();
 
-        SpriteFont spriteFont; 
+        public static SpriteFont spriteFont; 
 
         int selected = 0;
 
-        public Menu()   
+        public Menu(SpriteBatch spriteBatch)   
         {
             buttonList.Add("Play");
             buttonList.Add("Exit");
+            this.spriteBatch = spriteBatch;
         }
 
         public void LoadContent(ContentManager Content)
         {
             spriteFont = Content.Load<SpriteFont>("SpriteFont");
-            //instructionsTexture = Content.Load<Texture2D>("Instructions");
+            instructionsTexture = Content.Load<Texture2D>("Instructions");
         }
 
         public void Update(GameTime gameTime)
@@ -52,7 +55,6 @@ namespace PenguinCatch
                     selected++;
                 }
             }
-
             previousKeyboard = keyboard;
         }
 
@@ -66,7 +68,7 @@ namespace PenguinCatch
             return selected;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw()
         {
             int linePadding = 3;
             Color color;
@@ -81,14 +83,57 @@ namespace PenguinCatch
                 {
                     color = Color.White;
                 }
-
+                string text = "Welcome to Penguin Catch!";
                 spriteBatch.Begin();
+                spriteBatch.DrawString(spriteFont, text, new Vector2(masterController.graphics.PreferredBackBufferWidth/2 - spriteFont.MeasureString(text).X/2, spriteFont.MeasureString(text).Y*2),Color.White);
                 spriteBatch.DrawString(spriteFont, buttonList[i], new Vector2((masterController.graphics.PreferredBackBufferWidth / 2)
                                         - (spriteFont.MeasureString(buttonList[i]).X / 2), (masterController.graphics.PreferredBackBufferHeight/2)
                                         - (spriteFont.LineSpacing * buttonList.Count) / 2 + ((spriteFont.LineSpacing + linePadding) * i)), color);
-                spriteBatch.End();
-                
+                spriteBatch.End();                
             }
+        }
+
+        internal void Won()
+        {
+            string text = "You won! Press play to play again!";
+            spriteBatch.Begin();
+            spriteBatch.DrawString(spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X/2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.End();
+            Draw();
+        }
+
+        internal void Start()
+        {
+            Draw();
+            spriteBatch.Begin();
+            spriteBatch.Draw(instructionsTexture, new Vector2(masterController.graphics.PreferredBackBufferWidth/2 - instructionsTexture.Width/2, masterController.graphics.PreferredBackBufferHeight - instructionsTexture.Height), Color.White);
+            spriteBatch.End();
+        }
+
+        internal void NextLevel()
+        {
+            string text = "You made it! Press play to start next level!";
+            Draw();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(spriteFont, text , new Vector2((masterController.graphics.PreferredBackBufferWidth/2 - spriteFont.MeasureString(text).X/2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.End();
+        }
+
+        internal void PauseMenu()
+        {
+            string text = "Press play to resume the game!";
+            Draw();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.End();
+        }
+
+        internal void GameOver()
+        {
+            Draw();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Menu.spriteFont, "Game Over", new Vector2(20, 20), Color.Red);
+            spriteBatch.End();
         }
     }
 }
