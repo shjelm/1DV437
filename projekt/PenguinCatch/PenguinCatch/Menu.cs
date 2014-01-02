@@ -9,6 +9,10 @@ using Microsoft.Xna.Framework;
 
 namespace PenguinCatch
 {
+    //Med hjälp av tutorials 
+    //http://www.youtube.com/watch?v=sSbIF3dd0pQ
+    //http://www.youtube.com/watch?v=AAPxaqs9CQM
+
     class Menu
     {
         KeyboardState keyboard;
@@ -130,9 +134,12 @@ namespace PenguinCatch
 
         internal void GameOver()
         {
+            string text = "Game Over";
+            string restartText = "Press play to try again!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Menu.spriteFont, "Game Over", new Vector2(20, 20), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
     }

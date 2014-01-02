@@ -6,12 +6,12 @@ using Microsoft.Xna.Framework;
 
 namespace PenguinCatch.Model
 {
-    class Fish
-    {
+    class Enemy
+    {        
         private Vector2 position;
 
-        public Fish(Vector2 position) {
-
+        public Enemy(Vector2 position)
+        {
             this.position = position;
         }
 
