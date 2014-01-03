@@ -138,7 +138,7 @@ namespace PenguinCatch
             string restartText = "Press play to try again!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
             spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
