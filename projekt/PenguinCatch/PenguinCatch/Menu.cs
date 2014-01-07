@@ -108,8 +108,10 @@ namespace PenguinCatch
 
         internal void Start()
         {
+            string text2 = "Catch the fish and avoid the cans and the enemies!"; 
             Draw();
             spriteBatch.Begin();
+            spriteBatch.DrawString(spriteFont, text2, new Vector2(masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text2).X / 2, masterController.graphics.PreferredBackBufferHeight - spriteFont.MeasureString(text2).Y * 12), Color.White);
             spriteBatch.Draw(instructionsTexture, new Vector2(masterController.graphics.PreferredBackBufferWidth/2 - instructionsTexture.Width/2, masterController.graphics.PreferredBackBufferHeight - instructionsTexture.Height), Color.White);
             spriteBatch.End();
         }
@@ -139,7 +141,18 @@ namespace PenguinCatch
             Draw();
             spriteBatch.Begin();
             spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
-            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.End();
+        }
+
+        internal void Retry()
+        {
+            string text = "You shouldn't eat that!";
+            string restartText = "Press play to try again!";
+            Draw();
+            spriteBatch.Begin();
+            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
     }

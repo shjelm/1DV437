@@ -19,5 +19,16 @@ namespace PenguinCatch.Model
         {
             return position;
         }
+
+        public void SetPosition(float x, float y)
+        {
+            position.X += x;
+            position.Y += y;
+        }
+
+        internal void SetSolidPosition(int x, int y)
+        {
+            position = new Vector2(x, y);
+        }
     }
 }
