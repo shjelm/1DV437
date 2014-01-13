@@ -7,8 +7,125 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\Tile.xnb</Output>
-      <Time>2013-12-23T12:10:48+01:00</Time>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\Tile.xnb</Output>
+      <Time>2014-01-05T11:03:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>fish.png</Source>
+      <Name>fish</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\fish.xnb</Output>
+      <Time>2013-12-30T14:17:28+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Instructions.png</Source>
+      <Name>Instructions</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\Instructions.xnb</Output>
+      <Time>2014-01-02T12:32:08+01:00</Time>
+    </Item>
+    <Item>
+      <Source>spark.png</Source>
+      <Name>spark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\spark.xnb</Output>
+      <Time>2014-01-02T16:31:24+01:00</Time>
+    </Item>
+    <Item>
+      <Source>fishbone.png</Source>
+      <Name>fishbone</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\fishbone.xnb</Output>
+      <Time>2014-01-02T17:14:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>can.png</Source>
+      <Name>can</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\can.xnb</Output>
+      <Time>2014-01-05T11:03:02+01:00</Time>
+    </Item>
+    <Item>
+      <Source>fish2.png</Source>
+      <Name>fish2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\fish2.xnb</Output>
+      <Time>2014-01-05T11:03:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>penguin.png</Source>
+      <Name>penguin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\penguin.xnb</Output>
+      <Time>2014-01-05T11:03:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>snow.png</Source>
+      <Name>snow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\snow.xnb</Output>
+      <Time>2014-01-07T12:49:24+01:00</Time>
+    </Item>
+    <Item>
+      <Source>seal.png</Source>
+      <Name>seal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\seal.xnb</Output>
+      <Time>2014-01-07T16:01:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont.spritefont</Source>
+      <Name>SpriteFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\SpriteFont.xnb</Output>
+      <Time>2013-12-28T17:06:06+01:00</Time>
+    </Item>
+    <Item>
+      <Source>shovel.wav</Source>
+      <Name>shovel</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\shovel.xnb</Output>
+      <Time>2014-01-02T16:16:42+01:00</Time>
+    </Item>
+    <Item>
+      <Source>burp.wav</Source>
+      <Name>burp</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\burp.xnb</Output>
+      <Time>2014-01-02T16:22:40+01:00</Time>
+    </Item>
+    <Item>
+      <Source>applause.wav</Source>
+      <Name>applause</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\applause.xnb</Output>
+      <Time>2014-01-02T17:01:46+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -16,10 +133,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatchContent\</RootDirectory>
-      <LoggerRootDirectory>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\</LoggerRootDirectory>
-      <IntermediateDirectory>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatchContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatchContent\</RootDirectory>
+      <LoggerRootDirectory>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\</LoggerRootDirectory>
+      <IntermediateDirectory>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatchContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>F:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -48,7 +165,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-11-11T12:06:26.3977961+01:00</Value>
+        <Value>2010-11-24T17:48:14.8796856+01:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

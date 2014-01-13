@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <assemblyIdentity name="PenguinCatch.application" version="1.0.0.0" publicKeyToken="38edd3e07d5bda66" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:publisher="Hewlett-Packard" asmv2:product="PenguinCatch" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <deployment install="true" mapFileExtensions="true">
+    <subscription>
+      <update>
+        <beforeApplicationStartup />
+      </update>
+    </subscription>
+    <deploymentProvider codebase="http://sofiahjelm.se/PenguinCatch/Release/PenguinCatch.application" />
+  </deployment>
+  <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
+    <framework targetVersion="4.0" profile="Client" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
+  </compatibleFrameworks>
+  <dependency>
+    <dependentAssembly dependencyType="install" codebase="Application Files\PenguinCatch_1_0_0_0\PenguinCatch.exe.manifest" size="17432">
+      <assemblyIdentity name="PenguinCatch.exe" version="1.0.0.0" publicKeyToken="38edd3e07d5bda66" language="neutral" processorArchitecture="x86" type="win32" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>F6n5vntbFtXKJpHurxzCFwnNYhQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=Sofias-dator\Sofia" issuerKeyHash="3a4be88326c4c70d6ec783612ec6048c1b2e3d64" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>urc3B1iwa3S64yXzhs8o6XBCzCY=</DigestValue></Reference></SignedInfo><SignatureValue>fEpi2PytaaRk0jXYrc0BpS2UjvV2j4p0D2NAaGSW4XW6znRBVXTcevCyvzoTDDdICGX9XDlsqYsaDYq7uK0N22naiUe9+i4xkrhmcp0mGe0YDHSyjs3tpqksyPyaP8mKjK0qZz9qd/sAtoW7zkcntQMugOaQwNThhECltEonjLE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>pXcf24l2OWvk8iYUG6tRsVPVG/fhgzgnu6ed6FWoq4Xdq56NriG9H+eSbI2W/8MnJQ+YyG4Cd8Y+Si3hgZbzzsoLYyoHJCCuA9je7OhdDjvzF6TKOFcs8OSFtyjxX+UQILP7+MI0vT4yblFFp6WzkJr44I7Mi1X8WjeMi+amwVU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="26cc4270e928cf86f325e3ba746bb0580737b7ba" Description="" Url=""><as:assemblyIdentity name="PenguinCatch.application" version="1.0.0.0" publicKeyToken="38edd3e07d5bda66" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Sofias-dator\Sofia</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>YwZlHz7Fn29eiA+qxQwjy4xDueY=</DigestValue></Reference></SignedInfo><SignatureValue>haCSLpO958fqUYlME19jFpsEJGRYhVo5lXlV1uTiFHrRlR+btrgv91ivVL9jOtMPiZ1m44ZC3AiR0eKJhUKyC09XVy1wIWWkVMz2NEWZR1ZY2ejd2glDlY3XwQe9HfsJuBDwvRvKtxSJYThOH0l9OspgF28LYMFeXE/g2NjYeTM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>pXcf24l2OWvk8iYUG6tRsVPVG/fhgzgnu6ed6FWoq4Xdq56NriG9H+eSbI2W/8MnJQ+YyG4Cd8Y+Si3hgZbzzsoLYyoHJCCuA9je7OhdDjvzF6TKOFcs8OSFtyjxX+UQILP7+MI0vT4yblFFp6WzkJr44I7Mi1X8WjeMi+amwVU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQbca3YYqqEqFDbpr9NDD5JzANBgkqhkiG9w0BAQUFADAvMS0wKwYDVQQDHiQAUwBvAGYAaQBhAHMALQBkAGEAdABvAHIAXABTAG8AZgBpAGEwHhcNMTQwMTEzMTMwNTU0WhcNMTUwMTEzMTkwNTU0WjAvMS0wKwYDVQQDHiQAUwBvAGYAaQBhAHMALQBkAGEAdABvAHIAXABTAG8AZgBpAGEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKV3H9uJdjlr5PImFBurUbFT1Rv34YM4J7unnehVqKuF3aueja4hvR/nkmyNlv/DJyUPmMhuAnfGPkot4YGW887KC2MqByQgrgPY3uzoXQ478xekyjhXLPDkhbco8V/lECCz+/jCNL0+Mm5RRaels5Ca+OCOzItV/Fo3jIvmpsFVAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEARVuKZE4Nq0ruaFdnvClKZpdktKOXt0fnovbYdF+1Gb44p275a2yRZnE3OZk/EVNbaV1P8kbcvt4L9icdXddywFeNgtbrPLlq8U7umTkyNJsFq3ycBvtIvQdhB3ZcqHYsl+j/H0GbEu7gkIFAafBFlLPuJusE9WeBtMB4tKRUZZg=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

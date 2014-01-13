@@ -11,7 +11,14 @@ namespace PenguinCatch.Model
         private Level level;
         private Player player;
 
-        private bool collidedWithGround = false;
+        private CollisionDetails details;
+
+        public static int maxTime;
+
+        public static int levelCount = 0;
+
+        private int timeLeft;
+        public bool playWinSound;
 
         public GameModel()
         {
@@ -19,8 +26,16 @@ namespace PenguinCatch.Model
             player = new Player();
         }
 
-        public void Update(float elapsedTimeSeconds) 
+        public void Update(float elapsedTimeSeconds)
         {
+            if(level.CollidedWithEnemy(player.GetPosition(), level.GetEnemies(), level.GetMonster())){
+                player.LostLife();
+                MasterController.gameState = MasterController.GameStates.Retry;
+            }
+            if (player.life <= 0)
+            {
+                MasterController.gameState = MasterController.GameStates.GameOver;
+            }
             float timeStep = 0.001f;
             if (elapsedTimeSeconds > 0)
             {
@@ -33,6 +48,47 @@ namespace PenguinCatch.Model
 
                 float timeLeft = elapsedTimeSeconds - timeStep * numIterations;
                 UpdatePlayer(timeLeft);
+            }
+            if (level.LevelWon(level.caughtFish.Count))
+            {
+                if (levelCount == 2)
+                {
+                    playWinSound = true;
+                    MasterController.gameState = MasterController.GameStates.Won;
+                }
+                else
+                {
+                    MasterController.gameState = MasterController.GameStates.NextLevel;
+                }
+            }
+            if (GetTimeLeft()<= 0)
+            {
+                MasterController.gameState = MasterController.GameStates.GameOver;
+            }
+        }
+
+        public void UpdateMonster()
+        {
+            for (int i = 0; i < level.GetMonster().Count; i++)
+            {
+                Enemy monster = level.GetMonster()[i];
+
+                if (monster.GetPositon().X <= 17 && monster.GetPositon().Y <= 2)
+                {
+                    monster.SetPosition(0.1f, 0);
+                }
+                else if (monster.GetPositon().Y <= 17 && monster.GetPositon().X >= 17)
+                {
+                    monster.SetPosition(0, 0.1f);
+                }
+                else if (monster.GetPositon().Y >= 17 && monster.GetPositon().X <= 18 && monster.GetPositon().X >= 2)
+                {
+                    monster.SetPosition(-0.1f, 0);
+                }
+                else if (monster.GetPositon().X <= 17 && monster.GetPositon().Y <= 18 && monster.GetPositon().Y >= 2)
+                {
+                    monster.SetPosition(0, -0.1f);
+                }
             }
         }
 
@@ -48,13 +104,23 @@ namespace PenguinCatch.Model
 
             if (didCollide(newPosition))
             {
-                CollisionDetails details = getCollisionDetails(previousPosition, newPosition, speed);
-                collidedWithGround = details.collidedWithGround;
+                details = GetCollisionDetails(previousPosition, newPosition, speed);
 
                 player.SetNewPosition(details.positionAfterCollision);
-                player.SetSpeed(details.speedAfterCollision);
             }
         }
+
+        public bool CollidedWithIce()
+        {
+            if (details != null){
+                details = null;
+                return true;
+            }
+            return false;
+        }
+
+        //Kodgrund från Daniel Toll
+        //https://code.google.com/p/1dv437arkanoid/source/browse/trunk/Collisions/Collisions2/Model/Model.cs
 
         private bool didCollide(Vector2 position)
         {
@@ -65,76 +131,68 @@ namespace PenguinCatch.Model
             return false;
         }
 
-        private CollisionDetails getCollisionDetails(Vector2 previousPosition, Vector2 newPosition, Vector2 speed)
+        private CollisionDetails GetCollisionDetails(Vector2 previousPosition, Vector2 newPosition, Vector2 speed)
         {
-            CollisionDetails ret = new CollisionDetails(previousPosition, speed);
+            CollisionDetails ret = new CollisionDetails(speed, previousPosition);
 
-            Vector2 slidingXPosition = new Vector2(newPosition.X, previousPosition.Y); //Y movement ignored
-            Vector2 slidingYPosition = new Vector2(previousPosition.X, newPosition.Y); //X movement ignored
+            Vector2 xPosition = new Vector2(newPosition.X, previousPosition.Y); 
+            Vector2 yPosition = new Vector2(previousPosition.X, newPosition.Y); 
 
-            if (didCollide(slidingXPosition) == false)
+            if (didCollide(xPosition) == false)
             {
-                return doOnlyXMovement(ref speed, ret, ref slidingXPosition);
+                return MoveRightOrLeft(speed, ret);
             }
-            else if (didCollide(slidingYPosition) == false)
+            else if (didCollide(yPosition) == false)
             {
-
-                return doOnlyYMovement(ref speed, ret, ref slidingYPosition);
+                return MoveUpOrDown(speed, ret, yPosition);
             }
             else
             {
-                return doStandStill(ret, speed);
+                return Stop(ret, speed);
             }
 
         }
 
-        private static CollisionDetails doStandStill(CollisionDetails ret, Vector2 speed)
+        private static CollisionDetails Stop(CollisionDetails ret, Vector2 speed)
         {
-            if (speed.Y > 0)
-            {
-                ret.collidedWithGround = true;
-            }
             ret.speedAfterCollision = new Vector2(0, 0);
+
             return ret;
         }
 
-        private static CollisionDetails doOnlyYMovement(ref Vector2 speed, CollisionDetails ret, ref Vector2 slidingYPosition)
+        private static CollisionDetails MoveUpOrDown(Vector2 speed, CollisionDetails ret, Vector2 yPosition)
         {
-            speed.X *= -0.5f; //bounce from wall
-            ret.speedAfterCollision = speed;
-            ret.positionAfterCollision = slidingYPosition;
+            ret.positionAfterCollision = yPosition;
+
             return ret;
         }
 
-        private static CollisionDetails doOnlyXMovement(ref Vector2 speed, CollisionDetails ret, ref Vector2 slidingXPosition)
+        private static CollisionDetails MoveRightOrLeft(Vector2 speed, CollisionDetails ret)
         {
-            ret.positionAfterCollision = slidingXPosition;
-            //did we slide on ground?
-            if (speed.Y > 0)
-            {
-                ret.collidedWithGround = true;
-            }
 
-            ret.speedAfterCollision = doSetSpeedOnVerticalCollision(speed);
+            ret.speedAfterCollision = SetSpeedX(speed);
+
             return ret;
         }
 
-        private static Vector2 doSetSpeedOnVerticalCollision(Vector2 speed)
+        private static Vector2 SetSpeedX(Vector2 speed)
         {
-            //did we collide with ground?
-            if (speed.Y > 0)
-            {
-                speed.Y = 0; //no bounce
-            }
-            else
-            {
-                //collide with roof
-                speed.Y *= -1.0f;
-            }
-
-            speed.X *= 0.10f;
+            speed.X = 0.10f;
 
             return speed;
+        }
+        //Slut på kod från Daniel Toll
+
+        public bool CaughtFish()
+        {
+            List<Fish> fish = GetFish();
+            Vector2 position = player.GetPosition();
+
+            if (level.CaughtFish(position, fish))
+            {
+                return true;
+            }
+            return false;
         }
 
         public Player GetPlayer()
@@ -147,19 +205,81 @@ namespace PenguinCatch.Model
             return level;
         }
 
-        internal void Jump()
+        internal void Restart() 
         {
-            player.Jump();
+            level.GetFish().Clear();
+            level.caughtFish.Clear();
+            level.GetMonster().Clear();
+            level.GetEnemies().Clear();
+            MasterController.timer = 0;
+            player.SetNewPosition(new Vector2(Level.LEVEL_HEIGHT/2, Level.LEVEL_WIDTH/2));
+            level.CreateLevel();
+        }
+
+        internal void NextLevel()
+        {
+            levelCount++;
+        }
+
+        internal void ResetGame()
+        {
+            player.life = 3;
+            levelCount = 0;
+        }
+
+        internal List<Fish> GetFish()
+        {
+            return level.GetFish();
+        }
+
+        internal List<Enemy> GetEnemies()
+        {
+            return level.GetEnemies();
+        }
+
+        internal List<Enemy> GetMonster()
+        {
+            return level.GetMonster();
+        }
+
+        public Vector2 GetFishPosition()
+        {
+            return level.fishPos;
         }
 
         internal void MoveLeft()
         {
-            player.SetSpeed(new Vector2(-5.0f, player.GetSpeed().Y));
+            player.SetSpeed(new Vector2(-5.0f, 0));
+            player.angle = 0;
         }
 
         internal void MoveRight()
         {
-            player.SetSpeed(new Vector2(5.0f, player.GetSpeed().Y));
+            player.SetSpeed(new Vector2(5.0f, 0));
+            player.angle = 91;
+        }
+
+        internal void MoveUp()
+        {
+            player.SetSpeed(new Vector2(0, -5.0f));
+            player.angle = 171;
+        }
+
+        internal void MoveDown()
+        {
+            player.SetSpeed(new Vector2(0, 5.0f));
+            player.angle = 80;
+        }
+
+        internal int GetTimer(int timeElapsed)
+        {
+            timeLeft = maxTime - timeElapsed;
+            return timeLeft;
+        }
+
+        internal int GetTimeLeft()
+        {
+            return timeLeft;
         }
     }
 }

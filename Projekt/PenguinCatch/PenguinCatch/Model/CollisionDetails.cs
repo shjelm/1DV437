@@ -7,10 +7,9 @@ using Microsoft.Xna.Framework;
 namespace PenguinCatch.Model
 {
     class CollisionDetails
-    {
+    { 
         public Vector2 speedAfterCollision;
         public Vector2 positionAfterCollision;
-        public bool collidedWithGround = false;
 
         public CollisionDetails(Vector2 speed, Vector2 position)
         {

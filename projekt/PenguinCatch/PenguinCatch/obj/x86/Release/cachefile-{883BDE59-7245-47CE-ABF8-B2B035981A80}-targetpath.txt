@@ -6,6 +6,9 @@ Content\fishbone.xnb
 Content\can.xnb
 Content\fish2.xnb
 Content\penguin.xnb
+Content\snow.xnb
+Content\seal.xnb
+Content\sparkblue.xnb
 Content\SpriteFont.xnb
 Content\shovel.xnb
 Content\burp.xnb

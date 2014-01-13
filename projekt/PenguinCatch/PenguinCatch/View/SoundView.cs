@@ -9,7 +9,6 @@ namespace PenguinCatch.View
 {
     class SoundView
     {
-        float delay = 0.2f;
         public void PlaySound(SoundEffect sound) 
         {
             SoundEffectInstance soundEffectInstance = sound.CreateInstance();

@@ -10,7 +10,7 @@ namespace PenguinCatch.View
     class SplitterSystem
     {
         private SplitterParticle[] particles;
-        private const int MAX_PARTICLES = 5;
+        private const int MAX_PARTICLES = 10;
 
         public SplitterSystem(Vector2 modelStartPosition)
         {
@@ -18,15 +18,7 @@ namespace PenguinCatch.View
 
             for (int i = 0; i < MAX_PARTICLES; i++)
             {
-                particles[i] = new SplitterParticle(i, modelStartPosition);
-            }
-        }
-
-        public void Update(float elapsedTime)
-        {
-            for (int i = 0; i < MAX_PARTICLES; i++)
-            {
-                particles[i].Update(elapsedTime);
+                particles[i] = new SplitterParticle(modelStartPosition);
             }
         }
 

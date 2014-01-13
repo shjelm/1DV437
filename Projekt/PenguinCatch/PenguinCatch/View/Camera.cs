@@ -8,12 +8,9 @@ namespace PenguinCatch.View
 {
     class Camera
     {
-        public float borderSize = 1.0f;
         private Vector2 visual;
         private Vector2 logical;
         public Vector2 scale;
-        private int displacementX = 0;
-        private int displacementY = 0;
         public float windowHeight;
         public float windowWidth;
 
@@ -22,39 +19,33 @@ namespace PenguinCatch.View
             this.windowHeight = windowHeight;
             this.windowWidth = windowWidth;
 
-            //if (windowHeight > windowWidth)
-            //{
-            //    windowHeight = windowWidth;
-            //    gameBox = windowWidth;
-            //}
-            //else
-            //{
-            //    windowWidth = windowHeight;
-            //    gameBox = windowHeight;
-            //}
+            if (windowHeight > windowWidth)
+            {
+                windowHeight = windowWidth;
+            }
+            else
+            {
+                windowWidth = windowHeight;
+            }
 
             float x = windowHeight / maxLogicalCoordinateY;
             float y = windowWidth / maxLogicalCoordinateX;
+
             scale = new Vector2(x,y);
-
-            //borderSize = windowHeight * 0.05f;
-            borderSize = 0;
-
-            //gameBox = gameBox - borderSize * 2;
         }
 
         internal Vector2 GetVisualPositions(Vector2 logical)
         {
-            visual.X = (logical.X * scale.X) - borderSize;
-            visual.Y = (logical.Y * scale.Y) - borderSize;
+            visual.X = (logical.X * scale.X);
+            visual.Y = (logical.Y * scale.Y);
 
             return visual;
         }
 
         internal Vector2 GetModelPositions(Vector2 visual)
         {
-            logical.X = (visual.X  + borderSize)/scale.X;
-            logical.Y = (visual.Y  + borderSize)/scale.Y;
+            logical.X = visual.X /scale.X;
+            logical.Y = visual.Y/scale.Y;
 
             return logical;
         }
@@ -64,8 +55,8 @@ namespace PenguinCatch.View
             float visualRadiusX = logicalRadius * scale.X;
             float visualRadiusY = logicalRadius * scale.Y;
 
-            int visualX = (int)((logicalTopLeft.X * scale.X + displacementX));
-            int visualY = (int)((logicalTopLeft.Y * scale.Y + displacementY));
+            int visualX = (int)(logicalTopLeft.X * scale.X );
+            int visualY = (int)(logicalTopLeft.Y * scale.Y);
 
             return new Rectangle(visualX, visualY, (int)(visualRadiusX * 2.0f), (int)(visualRadiusY * 2.0f));
 

@@ -89,9 +89,9 @@ namespace PenguinCatch
                 }
                 string text = "Welcome to Penguin Catch!";
                 spriteBatch.Begin();
-                spriteBatch.DrawString(spriteFont, text, new Vector2(masterController.graphics.PreferredBackBufferWidth/2 - spriteFont.MeasureString(text).X/2, spriteFont.MeasureString(text).Y*2),Color.White);
-                spriteBatch.DrawString(spriteFont, buttonList[i], new Vector2((masterController.graphics.PreferredBackBufferWidth / 2)
-                                        - (spriteFont.MeasureString(buttonList[i]).X / 2), (masterController.graphics.PreferredBackBufferHeight/2)
+                spriteBatch.DrawString(spriteFont, text, new Vector2(MasterController.graphics.PreferredBackBufferWidth/2 - spriteFont.MeasureString(text).X/2, spriteFont.MeasureString(text).Y*2),Color.White);
+                spriteBatch.DrawString(spriteFont, buttonList[i], new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2)
+                                        - (spriteFont.MeasureString(buttonList[i]).X / 2), (MasterController.graphics.PreferredBackBufferHeight/2)
                                         - (spriteFont.LineSpacing * buttonList.Count) / 2 + ((spriteFont.LineSpacing + linePadding) * i)), color);
                 spriteBatch.End();                
             }
@@ -101,18 +101,21 @@ namespace PenguinCatch
         {
             string text = "You won! Press play to play again!";
             spriteBatch.Begin();
-            spriteBatch.DrawString(spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X/2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(spriteFont, text, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), 
+                                                                  MasterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
             Draw();
         }
 
         internal void Start()
         {
-            string text2 = "Catch the fish and avoid the cans and the enemies!"; 
+            string text2 = "Catch the fish! Avoid the red cans and the enemies!"; 
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(spriteFont, text2, new Vector2(masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text2).X / 2, masterController.graphics.PreferredBackBufferHeight - spriteFont.MeasureString(text2).Y * 12), Color.White);
-            spriteBatch.Draw(instructionsTexture, new Vector2(masterController.graphics.PreferredBackBufferWidth/2 - instructionsTexture.Width/2, masterController.graphics.PreferredBackBufferHeight - instructionsTexture.Height), Color.White);
+            spriteBatch.DrawString(spriteFont, text2, new Vector2(MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text2).X / 2,
+                                                                  MasterController.graphics.PreferredBackBufferHeight - spriteFont.MeasureString(text2).Y * 12), Color.White);
+            spriteBatch.Draw(instructionsTexture, new Vector2(MasterController.graphics.PreferredBackBufferWidth / 2 - instructionsTexture.Width / 2, 
+                                                              MasterController.graphics.PreferredBackBufferHeight - instructionsTexture.Height), Color.White);
             spriteBatch.End();
         }
 
@@ -121,7 +124,8 @@ namespace PenguinCatch
             string text = "You made it! Press play to start next level!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(spriteFont, text , new Vector2((masterController.graphics.PreferredBackBufferWidth/2 - spriteFont.MeasureString(text).X/2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(spriteFont, text, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), 
+                                                                  MasterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
 
@@ -130,7 +134,8 @@ namespace PenguinCatch
             string text = "Press play to resume the game!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(spriteFont, text, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), 
+                                                                  MasterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
 
@@ -140,8 +145,10 @@ namespace PenguinCatch
             string restartText = "Press play to try again!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
-            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), 
+                                                                       MasterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), 
+                                                                              MasterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
 
@@ -151,8 +158,10 @@ namespace PenguinCatch
             string restartText = "Press play to try again!";
             Draw();
             spriteBatch.Begin();
-            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), masterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
-            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((masterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), masterController.graphics.PreferredBackBufferHeight / 4), Color.White);
+            spriteBatch.DrawString(Menu.spriteFont, text, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(text).X / 2), 
+                                                                       MasterController.graphics.PreferredBackBufferHeight / 6), Color.Red);
+            spriteBatch.DrawString(Menu.spriteFont, restartText, new Vector2((MasterController.graphics.PreferredBackBufferWidth / 2 - spriteFont.MeasureString(restartText).X / 2), 
+                                                                              MasterController.graphics.PreferredBackBufferHeight / 4), Color.White);
             spriteBatch.End();
         }
     }

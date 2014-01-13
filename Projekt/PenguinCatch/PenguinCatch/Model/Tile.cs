@@ -15,52 +15,25 @@ namespace PenguinCatch.Model
         };
 
         private tileState state;
-        private int tileLeftInX;
-        private int tileTopInY;
 
-        public Tile(tileState tileState, int x, int y)
+        public Tile(tileState tileState)
         {
             state = tileState;
-            tileLeftInX = x;
-            tileTopInY = y;
         }
 
         public static Tile createEmptyTile(int x, int y)
         {
-            return new Tile(tileState.EMPTY, x, y);
+            return new Tile(tileState.EMPTY);
         }
 
         public static Tile createFilledTile(int x, int y)
         {
-            return new Tile(tileState.FILLED,x ,y );
+            return new Tile(tileState.FILLED);
         }
 
         public bool isFilled()
         {
             return state == tileState.FILLED;
-        }
-
-        internal bool isCollidingWith(Vector2 position, float radius)
-        {
-            if (position.X - radius > tileLeftInX + 1.0f)
-            {
-                return false;
-            }
-            if (position.X + radius < tileLeftInX)
-            {
-                return false;
-            }
-
-            if (position.Y - radius > tileTopInY + 1.0f)
-            {
-                return false;
-            }
-            if (position.Y + radius < tileTopInY)
-            {
-                return false;
-            }
-
-            return true;
         }
     }
 }

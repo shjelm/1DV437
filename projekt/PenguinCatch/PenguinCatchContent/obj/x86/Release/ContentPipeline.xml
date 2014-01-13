@@ -74,13 +74,40 @@
       <Time>2014-01-05T11:03:04+01:00</Time>
     </Item>
     <Item>
+      <Source>snow.png</Source>
+      <Name>snow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Release\Content\snow.xnb</Output>
+      <Time>2014-01-07T12:49:24+01:00</Time>
+    </Item>
+    <Item>
+      <Source>seal.png</Source>
+      <Name>seal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Release\Content\seal.xnb</Output>
+      <Time>2014-01-07T16:01:04+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sparkblue.png</Source>
+      <Name>sparkblue</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Release\Content\sparkblue.xnb</Output>
+      <Time>2014-01-09T11:23:48+01:00</Time>
+    </Item>
+    <Item>
       <Source>SpriteFont.spritefont</Source>
       <Name>SpriteFont</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>G:\Spelprogrammering\Projekt\PenguinCatch\PenguinCatch\bin\x86\Release\Content\SpriteFont.xnb</Output>
-      <Time>2013-12-28T17:06:06+01:00</Time>
+      <Time>2014-01-09T12:05:42+01:00</Time>
     </Item>
     <Item>
       <Source>shovel.wav</Source>

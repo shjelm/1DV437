@@ -8,9 +8,15 @@ namespace PenguinCatch.Model
 {
     class Player
     {
-        Vector2 leftBottomPos = new Vector2(1.0f, 18.0f);
+        Vector2 leftBottomPos = new Vector2(10.0f, 10.0f);
         Vector2 speed = new Vector2(0, 0);
-        Vector2 acceleration;
+        public int life;
+        public float angle;
+
+        public Player()
+        {
+            life = 3;
+        }
 
         internal Vector2 GetPosition()
         {
@@ -19,16 +25,7 @@ namespace PenguinCatch.Model
 
         internal void Update(float elapsedTimeSeconds)
         {
-            acceleration = new Vector2(0.0f, 2.0f);
-
-            leftBottomPos = leftBottomPos + speed * elapsedTimeSeconds + acceleration * elapsedTimeSeconds * elapsedTimeSeconds;
-
-            speed = speed + elapsedTimeSeconds * acceleration;
-        }
-
-        internal void Jump()
-        {
-            speed.Y = -2.0f;
+            leftBottomPos = leftBottomPos + speed * elapsedTimeSeconds;
         }
 
         internal void SetNewPosition(Vector2 position)
@@ -44,6 +41,16 @@ namespace PenguinCatch.Model
         internal void SetSpeed(Vector2 newSpeed)
         {
             speed = newSpeed;
+        }
+
+        internal void LostLife()
+        {
+            life--;
+        }
+
+        public int GetLife()
+        {
+            return life;
         }
     }
 }
